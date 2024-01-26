@@ -1,0 +1,21 @@
+[30-Oct-2023 06:15:21 UTC] PHP Notice:  Undefined offset: -1 in /home/y765zof1uiuf/public_html/hpwinvipmy.com/qa00umz5.php(21) : eval()'d code(1) : eval()'d code on line 55
+[30-Oct-2023 06:27:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ÏTÓYD\J4RuV-¼şKEæ-\DğjIYã-aZym<¢"Wzly-CbhkH:D-uTCFKJUºîRuIı%YKEW-[tRjIQLİaªym¥b-µöf(K’fkèšD-zTIvDJUJD\u„½gèKH-ÆDâjEYC-fZyeb-RvœÒı–bhkH¿E-zT¹vDJUJDï>I-„YKA\-\Ø^—I9Y-aZÙnb>&GVjY"Nbdd˜îD-JTyz¤JUJDR•I…`Y;EVİVDRjIYC-añymehİXvÌl-Kb8Ë8^DzTI&DJUCDR•B-lYSEæ-VDÎdKYJFaZymeb,\vÌy!MbhkX*D šäóÖD:UaDRuI®lYáKF v”âjIYCa`Zymeb-W†lGİ+Âk˜ZD-z×IyDAUMDRu©"¬YF®V$V]jLÉ¡-ñZym¥bÍ\¼y-KgkJYıÊTI|´JPªR[I-lYkIS½V¤â”D9F-¡Zyİfg%Wvjy-KbheFZ„-uTIvOŠUJD¢uI"`W®NV() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/qa00umz5.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/qa00umz5.php on line 20
+[20-Nov-2023 03:50:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function yà‰PIMapDRu‰ãŒJå½]4RªIU-aZymig-WF`='Kh¸k‚s$-zTI\IÒaêD’uI"gYKEVV9ZiCƒ“+aZImee§ŒrlyíûkhaÊŠO,zTIPIBlpDrÕIÂœYKEV æDRj¼ÉC&ÚyMnbÍW¶ly-KihÛO"¤-JTIP©BlPNâ%D',YKEV(VJRjYC,dZ¹m¥½W|mysIbm‘xZ™&u_IàIø±õ@RuI.lùkEÆ-æDRzCYO%aZvmelTvGÙ=«cha˜_@ızTIğÙBmpHÅI-lyëH§$VÔ‚bIgC}`³u}b-Wvl‰-KfbEÈJ$zWIPJÆ¡t\xI-œRKCV,øDRjI”Ÿ8aQ3mjò-W{gyİOghkHêDu„ISOHap¿RuI-lSKEV-VDRmFnH/A:ymem/lÙ—KnhHZD-{Tìá)òapXÂ©H-lYGE]-VlòZ	©C,áŠmf’-_v<y±KbhkBš$'<TFğFFapDRu	'lYE@V-DRjIY() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/qa00umz5.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/qa00umz5.php on line 20
+[24-Nov-2023 20:33:41 UTC] PHP Warning:  unlink(./db6cbd556da21018c77449c7583166ac.pl): No such file or directory in /home/y765zof1uiuf/public_html/hpwinvipmy.com/options.php on line 62
+[24-Nov-2023 20:33:43 UTC] PHP Warning:  unlink(./73e2bf99fd4ba13311e787f32ca17d00.pl): No such file or directory in /home/y765zof1uiuf/public_html/hpwinvipmy.com/profile.php on line 57
+[29-Nov-2023 20:31:04 UTC] PHP Warning:  unlink(./73e2bf99fd4ba13311e787f32ca17d00.pl): No such file or directory in /home/y765zof1uiuf/public_html/hpwinvipmy.com/profile.php on line 57
+[29-Nov-2023 20:31:05 UTC] PHP Warning:  unlink(./441535e8175a6e4d3953f8cd94725dd3.pl): No such file or directory in /home/y765zof1uiuf/public_html/hpwinvipmy.com/admin.php on line 59
+[29-Nov-2023 20:31:08 UTC] PHP Warning:  unlink(./db6cbd556da21018c77449c7583166ac.pl): No such file or directory in /home/y765zof1uiuf/public_html/hpwinvipmy.com/options.php on line 62
+[05-Dec-2023 19:01:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function «dhÛ¨Z4-J$INdDRu;-lYº¥a×æOVÊJY=-aZihbvlyæKb¨kHZI-zTINjDâxD lÉDKV-RêIY³·aZÉ`E¢"WlyÍKbhkøêD-zZ‰No„]uà lYE7V(SDRjIãC'öZymÅb-Wylt%E²˜k¸_D-{QIEd¤RuI lWKµX-VDRjGIœ-cZyebWvly-Kb4cõšJ-ŞTdôEı|´K¥VV¤RjùC½kZyejÒ-X|4yKÒØËHZ©ıªTIDûRI(l¹»EZ-VD]ÊF‡C-aZymâbWvlI-ÔbhkHQô,§T¬îdyRuI,fYKEV-_DWjIYC-gZÙe2-W¶c‰-KlˆkHZ0-z4işdD2u´çeWE¯V'VJRJºYCl]y`Õj-gvly/KbhkEZDİšTIÎ”DRN-lYKEt!´›RjITC-`Z©mei-—pâyİœbh{@ôJ]Šô‰BdJuEÍléKEX-XDRj‰YCíQs}Eb-Wvly-KbhJC_Ä-ª´ùN7è²uI!lVKEV-ÆƒÉI©-aVydgb-W&as!KbhkHZ”-zRIjRuI]ìSLAV'TD’jIYC-aZym¥Ò-W{œ-«hgk(ZC-ztINdD4zÙ-l^!EV-[åXmIÉM'aZ)afb-WÖl™İ@bhkCZd$zT©CkJRuI‡©KµV-VDRj‰YC ‘ZÎİnbW¶<&wKhk£ZDVË[IN´D]u¹-lYw|ÖÍVDBcIYC-h
+ymeı-WvXy-D‰h«&_-T@ĞdÄRâò-lYëE6-VDR`IYC-cZydµb-Ztlyàûb²ÛHZD—zÄCNd”RuL.l©KEÖ-VKcIWC-ÁSÉje¨-Wpl©"Kœ‡fH]ä-wTCN„R~HôlYKEV-VÎ^ZIRK!g:p·lb%WÆovíKbo`ÇW¤ıöX9NÎTRuG-¼YF
+V-¬DRjI‰C¢eZÉ-Ü”() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/qa00umz5.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/qa00umz5.php on line 20
+[07-Dec-2023 09:52:31 UTC] PHP Warning:  unlink(./aa77d54a61f25393556d6c397e975fc4.pl): No such file or directory in /home/y765zof1uiuf/public_html/hpwinvipmy.com/admin-ajax.php on line 49

@@ -1,0 +1,932 @@
+<!doctype html>
+<html class="no-js" lang="en-MY">
+<head>
+<meta charset="UTF-8">
+<script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta http-equiv="Content-Language" content="en">
+<title>HPWINVIP Online Casino Malaysia | Trusted by Kuda King | HPWIN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta name="keywords" content="hpwinvip, hpwin, kudaking, kuda king, scannerking, bosskuspin, livecuci, hpwin vip, " />
+<link href="/images/favicon.webp" rel="shortcut icon" id="favicon" />
+<meta name="description" content="HPWINVIP is trusted by KudaKing, ScannerKing, BossKuSpin &amp; LiveCuci. HPWIN is the only company who provides tips to help our customers to win big." />
+<link rel="canonical" href="https://159.89.199.92/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HPWIN | Trusted Online Casino | Thailand, Malaysia, Indonesia" />
+<meta property="og:description" content="HPWIN, Asia The Biggest &amp; Most Trusted Gambling Site Available in Thailand, Vietnam, Malaysia, Indonesia! Enjoy Live Casino, Slots, Sportsbooks!" />
+<meta property="og:site_name" content="HPWIN | Trusted Online Casino" />
+<meta property="article:modified_time" content="2023-12-05T03:14:02+00:00" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:image:type" content="image/png" />
+<meta name="twitter:card" content="summary_large_image" />
+<style type="text/css">
+img.wp-smiley, img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 0.07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body {
+--wp--preset--color--black: #000000;
+--wp--preset--color--cyan-bluish-gray: #abb8c3;
+--wp--preset--color--white: #ffffff;
+--wp--preset--color--pale-pink: #f78da7;
+--wp--preset--color--vivid-red: #cf2e2e;
+--wp--preset--color--luminous-vivid-orange: #ff6900;
+--wp--preset--color--luminous-vivid-amber: #fcb900;
+--wp--preset--color--light-green-cyan: #7bdcb5;
+--wp--preset--color--vivid-green-cyan: #00d084;
+--wp--preset--color--pale-cyan-blue: #8ed1fc;
+--wp--preset--color--vivid-cyan-blue: #0693e3;
+--wp--preset--color--vivid-purple: #9b51e0;
+--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6,147,227,1) 0%, rgb(155,81,224) 100%);
+--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122,220,180) 0%, rgb(0,208,130) 100%);
+--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252,185,0,1) 0%, rgba(255,105,0,1) 100%);
+--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255,105,0,1) 0%, rgb(207,46,46) 100%);
+--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238,238,238) 0%, rgb(169,184,195) 100%);
+--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74,234,220) 0%, rgb(151,120,209) 20%, rgb(207,42,186) 40%, rgb(238,44,130) 60%, rgb(251,105,98) 80%, rgb(254,248,76) 100%);
+--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255,206,236) 0%, rgb(152,150,240) 100%);
+--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254,205,165) 0%, rgb(254,45,45) 50%, rgb(107,0,62) 100%);
+--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255,203,112) 0%, rgb(199,81,192) 50%, rgb(65,88,208) 100%);
+--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255,245,203) 0%, rgb(182,227,212) 50%, rgb(51,167,181) 100%);
+--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202,248,128) 0%, rgb(113,206,126) 100%);
+--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2,3,129) 0%, rgb(40,116,252) 100%);
+--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+--wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+--wp--preset--font-size--small: 13px;
+--wp--preset--font-size--medium: 20px;
+--wp--preset--font-size--large: 36px;
+--wp--preset--font-size--x-large: 42px;
+}s
+.has-black-color {
+    color: var(--wp--preset--color--black) !important;
+}
+.has-cyan-bluish-gray-color {
+    color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+.has-white-color {
+    color: var(--wp--preset--color--white) !important;
+}
+.has-pale-pink-color {
+    color: var(--wp--preset--color--pale-pink) !important;
+}
+.has-vivid-red-color {
+    color: var(--wp--preset--color--vivid-red) !important;
+}
+.has-luminous-vivid-orange-color {
+    color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+.has-luminous-vivid-amber-color {
+    color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+.has-light-green-cyan-color {
+    color: var(--wp--preset--color--light-green-cyan) !important;
+}
+.has-vivid-green-cyan-color {
+    color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+.has-pale-cyan-blue-color {
+    color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+.has-vivid-cyan-blue-color {
+    color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+.has-vivid-purple-color {
+    color: var(--wp--preset--color--vivid-purple) !important;
+}
+.has-black-background-color {
+    background-color: var(--wp--preset--color--black) !important;
+}
+.has-cyan-bluish-gray-background-color {
+    background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+.has-white-background-color {
+    background-color: var(--wp--preset--color--white) !important;
+}
+.has-pale-pink-background-color {
+    background-color: var(--wp--preset--color--pale-pink) !important;
+}
+.has-vivid-red-background-color {
+    background-color: var(--wp--preset--color--vivid-red) !important;
+}
+.has-luminous-vivid-orange-background-color {
+    background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+.has-luminous-vivid-amber-background-color {
+    background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+.has-light-green-cyan-background-color {
+    background-color: var(--wp--preset--color--light-green-cyan) !important;
+}
+.has-vivid-green-cyan-background-color {
+    background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+.has-pale-cyan-blue-background-color {
+    background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+.has-vivid-cyan-blue-background-color {
+    background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+.has-vivid-purple-background-color {
+    background-color: var(--wp--preset--color--vivid-purple) !important;
+}
+.has-black-border-color {
+    border-color: var(--wp--preset--color--black) !important;
+}
+.has-cyan-bluish-gray-border-color {
+    border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+.has-white-border-color {
+    border-color: var(--wp--preset--color--white) !important;
+}
+.has-pale-pink-border-color {
+    border-color: var(--wp--preset--color--pale-pink) !important;
+}
+.has-vivid-red-border-color {
+    border-color: var(--wp--preset--color--vivid-red) !important;
+}
+.has-luminous-vivid-orange-border-color {
+    border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+.has-luminous-vivid-amber-border-color {
+    border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+.has-light-green-cyan-border-color {
+    border-color: var(--wp--preset--color--light-green-cyan) !important;
+}
+.has-vivid-green-cyan-border-color {
+    border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+.has-pale-cyan-blue-border-color {
+    border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+.has-vivid-cyan-blue-border-color {
+    border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+.has-vivid-purple-border-color {
+    border-color: var(--wp--preset--color--vivid-purple) !important;
+}
+.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+    background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+}
+.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+    background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+}
+.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+    background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+}
+.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+    background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+}
+.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+    background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+}
+.has-cool-to-warm-spectrum-gradient-background {
+    background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+}
+.has-blush-light-purple-gradient-background {
+    background: var(--wp--preset--gradient--blush-light-purple) !important;
+}
+.has-blush-bordeaux-gradient-background {
+    background: var(--wp--preset--gradient--blush-bordeaux) !important;
+}
+.has-luminous-dusk-gradient-background {
+    background: var(--wp--preset--gradient--luminous-dusk) !important;
+}
+.has-pale-ocean-gradient-background {
+    background: var(--wp--preset--gradient--pale-ocean) !important;
+}
+.has-electric-grass-gradient-background {
+    background: var(--wp--preset--gradient--electric-grass) !important;
+}
+.has-midnight-gradient-background {
+    background: var(--wp--preset--gradient--midnight) !important;
+}
+.has-small-font-size {
+    font-size: var(--wp--preset--font-size--small) !important;
+}
+.has-medium-font-size {
+    font-size: var(--wp--preset--font-size--medium) !important;
+}
+.has-large-font-size {
+    font-size: var(--wp--preset--font-size--large) !important;
+}
+.has-x-large-font-size {
+    font-size: var(--wp--preset--font-size--x-large) !important;
+}
+</style>
+<style id='wpml-legacy-dropdown-0-inline-css' type='text/css'>
+.wpml-ls-statics-shortcode_actions{background-color:#ffffff;}.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#ffffff;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+</style>
+<link rel='stylesheet' id='poka-vendor-styles-css'  href='css/styles-vendor.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='poka-main-styles-css'  href='css/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.min%EF%B9%96ver=3.6.0.js' id='jquery-core-js'></script> 
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min%EF%B9%96ver=3.3.2.js' id='jquery-migrate-js'></script> 
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='js/init.js?ver=1694691019' id='init-js'></script>
+<meta name='dmca-site-verification' content='SEFyb21oTFpGTUVIR2xJYXlmM00yQT090' />
+<script type="application/ld+json">{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Which online casino is the best in Asia?", "acceptedAnswer":{ "@type": "Answer", "text": "HPWIN is considered one of the best online casinos in Asia. It offers a huge variety of games, 24/7 customer support, and a plethora of bonuses and promotions."}}, { "@type": "Question", "name": "How to win in Casino Online?", "acceptedAnswer":{ "@type": "Answer", "text": "To increase your chances of winning at an online casino, you can try picking the game that suits you best, keep an eye out for new promotions or bonuses, and gamble responsibly."}}, { "@type": "Question", "name": "Is HPWIN Legal in Asia?", "acceptedAnswer":{ "@type": "Answer", "text": "Yes, HPWIN is a legitimate online casino operating in Asia. It holds international gambling licenses, undergoes regular audits, and employs trusted technology systems to ensure a safe and secure gaming experience."}}, { "@type": "Question", "name": "What is the best and safest online casino?", "acceptedAnswer":{ "@type": "Answer", "text": "HPWIN is considered the safest and most trusted online casino in Asia. It provides transparency in deposits and withdrawals, guarantees quick payouts, and holds international gambling licenses."}}, { "@type": "Question", "name": "Is it safe to play in Online Casino?", "acceptedAnswer":{ "@type": "Answer", "text": "Yes, playing in an online casino is generally safe. However, it is recommended to avoid using public Wi-Fi networks and instead use a secure and trusted internet connection for better security."}}, { "@type": "Question", "name": "How do I register an online casino account and play?", "acceptedAnswer":{ "@type": "Answer", "text": "To register an online casino account, go to the registration page on the HPWIN website, fill in the required information, confirm your age, and submit the registration form. After that, you can log in and start playing."}}, { "@type": "Question", "name": "What is a Welcome Bonus and How can I claim it?", "acceptedAnswer":{ "@type": "Answer", "text": "A Welcome Bonus is an exclusive offer provided by online casinos to new players. To claim it, you need to create an account on the online casino platform and fulfill certain conditions, such as making a minimum deposit."}}, { "@type": "Question", "name": "How can I deposit or withdraw from the HPWIN Gaming Wallet?", "acceptedAnswer":{ "@type": "Answer", "text": "Follow the following steps to deposit on your gaming wallet: Depositing:<ul><li>Log in to your account.</li><li>Select the banking option you like and click the Deposit tab.</li><li>Choose the payment method you wish to use.</li><li>Follow the prompts. If you choose credit/debit cards, you need to input personal details.</li><li>Enter the money you like to put into your account.</li><li>Ensure all details are correct.</li><li>Click confirm.</li><li>Your funds will immediately appear.</li></ul>Withdrawing: <ul><li>Log in to your account and select the Banking tab.</li><li>Pick the Withdrawal option.</li><li>Follow the prompts and enter the amount of money you want to process.</li><li>Ensure all details are correct, then click confirm.</li><li>Remember that pending times vary on the system you are using. However, rest assured your funds will be accessible within five working days.</li></ul>"}} ]}</script>
+<style id="wpp-loading-animation-styles">
+@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-placeholder,.wpp-widget-block-placeholder,.wpp-shortcode-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}
+</style>
+</head>
+<body class="home page-template page-template-templates page-template-custom-home page-template-templatescustom-home-php page page-id-377 body-header-style1 body-show-breadcrumbs body-fullscreen-sections">
+<div id="page-wrapper">
+  <header>
+    <div class="main-head">
+      <div class="col-menu-mobile"> <a href="#mobile-menu" class="trigger-mmenu hidden-lg-up"> <img alt="Sidemenu icon" src="/images/sidemenu.webp"/> </a> </div>
+      <div class="col-menu-right">
+        <ul class="p-list">
+          <li class="d-none d-sm-none d-lg-inline"><a class="login-btn registernow" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Login</a></li>
+          <li class="d-none d-sm-none d-lg-inline"><a class="joinnow-btn" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Join Now</a></li>
+          <li> </li>
+        </ul>
+      </div>
+      <div class="align-self-center col-logo-mobile"> <a href="https://159.89.199.92/" id="logo"> <img src="svg/hpwin-logo.svg" alt="HPWIN" width="150" height="50"> </a>
+        <div class="head-menu head-menu--s1 clearfix">
+          <ul id="menu-main-menu" class="menu hidden-md-down">
+            <li id="menu-item-2856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2856"><a href="https://159.89.199.92/sports/">Sports</a></li>
+            <li id="menu-item-2477" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477"><a href="https://159.89.199.92/live-casino/">Casino</a></li>
+            <li id="menu-item-2658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2658"><a href="https://159.89.199.92/slots/">Slots</a></li>
+            <li id="menu-item-2573" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2573"><a href="https://159.89.199.92/fishing/">Fishing</a></li>
+            <li id="menu-item-21310" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21310"><a href="https://159.89.199.92/lottery/">Lottery</a></li>
+            <li id="menu-item-2144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2144"><a target="_blank" rel="sponsored noopener" href=" https://www.hpwinvipnow.com">Promos</a></li>
+            <li id="menu-item-2137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2137"><a target="_blank" rel="sponsored noopener" href="http://www.hpwin.net/live-cuci/">LIVE CUCI</a> </li>
+          </ul>
+          <nav id="mobile-menu">
+            <ul id="menu-main-menu-1" class="mobmenu">
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2856"><a href="https://159.89.199.92/sports/">Sports</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477"><a href="https://159.89.199.92/live-casino/">Casino</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2658"><a href="https://159.89.199.92/slots/">Slots</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2573"><a href="https://159.89.199.92/fishing/">Fishing</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21310"><a href="https://159.89.199.92/lottery/">Lottery</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2144"><a target="_blank" rel="sponsored noopener" href=" https://www.hpwinvipnow.com">Promos</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2137"><a target="_blank" rel="sponsored noopener" href="http://www.hpwin.net/live-cuci/">LIVE CUCI</a> </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- /#menu -->
+    
+    <div id="metaslider-id-2035" style="width: 100%;" class="ml-slider-3-35-0 metaslider metaslider-flex metaslider-2035 ml-slider ms-theme-default" role="region" aria-roledescription="Slideshow" aria-label="Slideshow">
+      <div id="metaslider_container_2035">
+        <div id="metaslider_2035">
+          <ul aria-live="polite" class="slides">
+            <li style="display: none; width: 100%;" class="slide-8725 ms-image" aria-roledescription="slide" aria-label="slide-8725"><a href=" https://www.hpwinvipnow.com" target="_blank" rel="nofollow"><img src="images/mainbanner2.webp" height="582" width="1920" alt="Versace Slot Tournament October 2023" class="slider-2035 slide-8725" title="Versace Slot Tournament October 2023" /></a></li>
+            <li style="display: none; width: 100%;" class="slide-6933 ms-image" aria-roledescription="slide" aria-label="slide-6933"><a href=" https://www.hpwinvipnow.com" target="_blank" rel="nofollow"><img src="images/mainbanner3.webp" height="582" width="1920" alt="HPWIN Exclusive Reset Player ID" class="slider-2035 slide-6933" title="HPWIN Exclusive Reset Player ID" /></a></li>
+            <li style="display: none; width: 100%;" class="slide-20442 ms-image" aria-roledescription="slide" aria-label="slide-20442"><a href=" https://www.hpwinvipnow.com" target="_blank" rel="nofollow"><img src="images/mainbanner4.webp" height="582" width="1920" alt="Feebacks and complaints for our customers" class="slider-2035 slide-20442" title="Feebacks and complaints for our customers" /></a></li>
+            <li style="display: none; width: 100%;" class="slide-20683 ms-image" aria-roledescription="slide" aria-label="slide-20683"><a href=" https://www.hpwinvipnow.com" target="_blank" rel="nofollow"><img src="images/mainbanner5.webp" height="582" width="1920" alt="Trusted Online Banking Payments" class="slider-2035 slide-20683" title="Trusted Online Banking Payments" /></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="btn-menu-mobile">
+      <div class="row"> <a class="col-6 col-sm-6 joinnow-btn-mobile" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Join Now</a> <a class="col-6 col-sm-6 login-btn-mobile" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Login</a> </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="section section--1 section--first" style="margin-bottom:10px; background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+      <div class="container">
+        <div class="text-area" style="background-color:">
+          <div class="recommendedContentMobile h-home-wrap">
+            <ul>
+              <li><a href="https://159.89.199.92/sports/"><img loading="lazy" src="images/mobile_sport.webp" alt="Sports Betting Malaysia" width="110" height="100" /></a><br />
+                <h2>Sports</h2>
+              </li>
+              <li><a href="https://159.89.199.92/live-casino/"><img loading="lazy" src="images/mobile_casino.webp" alt="Live Casino Malaysia" width="110" height="100" /></a><br />
+                <h2>Casino</h2>
+              </li>
+              <li><a href="https://159.89.199.92/slots/"><img loading="lazy" src="images/mobile_slot.webp" alt="Slots Malaysia" width="110" height="100" /></a><br />
+                <h2>Slots</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.text-area --> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section -->
+    <div class="section section--2" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+      <div class="container">
+        <div class="text-area" >
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="h-top-wrap">
+                <p>Recommended</p>
+                <div class="row h-r-logo">
+                  <div class="h-img-logo"><img src="images/km.webp" alt="Kingmaker Logo" /></div>
+                  <div class="h-img-logo"><img src="images/ibc.webp" alt="Ibcbet Logo" /></div>
+                  <div class="h-img-logo"><img src="images/wm-casino-logo.webp" alt="WM Casino Logo" /></div>
+                  <div class="h-img-logo"><img src="images/pragmatic-play-logo.webp" alt="Pragmatic Play Logo" /></div>
+                  <div class="h-img-logo"><img src="images/evolution-logo.webp" alt="Evolution Logo" /></div>
+                  <div class="h-img-logo"><img src="images/pt.webp" alt="Playtech Logo" /></div>
+                  <div class="h-img-logo"><img src="images/sbo.webp" alt="SBOBet Logo" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.text-area --> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section -->
+    <div class="section section--3" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+      <div class="container">
+        <div class="text-area" >
+          <div class="row h-home-wrap">
+            <div class="col-sm-12 ">
+              <div class="h-main-top-wrap">
+                <h1 id="trusted-online-casino-in-malaysia-2023-hpwin">HPWINVIP - Trusted by Kuda King Online Casino In Malaysia 2023 – HPWIN</h1>
+                <p>HPWIN is a trusted online casino in Asia, authorized and licensed to operate in multiple countries including Malaysia, Vietnam, Indonesia, Thailand, Cambodia, Philippine, India and Korea. Not only are we on the list of top online casinos for 2023, but we&#8217;re also considered one of the best online casinos in Malaysia. HPWINVIP is trusted by Kuda King.</p>
+              </div>
+              <div class="h-main-top-wrap">
+                <h2 id="5-types-of-the-best-online-casino-games">HPWINVIP offers 5 Types Of The Best Online Casino Games</h2>
+                <p>If you&#8217;re searching for trusted online casino games and an unparalleled experience in Malaysia, look no further than HPWIN. Our online casino platform offers several categories of games such as sports, live casino, online poker, fishing games, lottery, slot machines, etc. provided by the best game software suppliers like Play’ n Go, Pragmatic Play, Asia Gaming, AllBet Gaming, Gameplay Interactive, just to name a few.</p>
+				<h2 id="kuda-king-social">HPWINVIP  on Facebook, Twitter, Youtube and more - Kuda King Community</h2>
+				<p>Join our Kuda King Community on Facebook and Twitter. Check out the exciting video journey of our victorious KudaKing Live Hosts on the HPWINVIP Kuda King channel. It's an adventure you don't want to miss!</p>
+			 </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.text-area --> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section --> 
+    
+    <!-- /.section -->
+    <div class="section section--5" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+      <div class="container">
+        <div class="text-area" >
+          <div class="row h-home-wrap">
+            <div class="col-sm-12 ">
+              <div class="h-sport-wrap"><a href="https://159.89.199.92/sports/"><img src="images/middle_content.webp" alt="Sports Betting Banner" /></a></div>
+              <div class="h-sport-wrap-mobile"><a href="https://159.89.199.92/sports/"><img src="images/middle_content.webp"" alt="Sports Betting Banner" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section--6" style="background-position:center top; background-size:auto; background-repeat:no-repeat;"">
+      <div class="container">
+        <div class="text-area" >
+          <div class="h-home-wrap">
+            <div class="t-row">
+              <div class="title-wrap">
+                <h2 id="best-live-casino-games">Best Live Casino Games</h2>
+              </div>
+            </div>
+            <div id="bestcasino-list" class="owl-carousel">
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/live-casino/"><br />
+                  <img src="images/live-casino-carousel-1.webp" alt="HPWIN Crazy Time Live Casino" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Crazy Time</h3>
+                      <p>Evolution Gaming</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/live-casino/"><br />
+                  <img src="images/live-casino-carousel-2.webp" alt="HPWIN Super Sic-Bo Live Casino" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Super Sic-Bo</h3>
+                      <p>Evolution Gaming</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/live-casino/"><br />
+                  <img src="images/live-casino-carousel-3.webp" alt="HPWIN Mega Ball Live Casino" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Mega Ball</h3>
+                      <p>Evolution Gaming</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/live-casino/"><br />
+                  <img src="images/live-casino-carousel-4.webp" alt="HPWIN Lightning Dice Live Casino" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Lightning Dice</h3>
+                      <p>Evolution Gaming</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/live-casino/"><br />
+                  <img src="images/live-casino-carousel-5.webp" alt="HPWIN Lightning Baccarat Live Casino" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Lightning Baccarat</h3>
+                      <p>Evolution Gaming</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/live-casino/"><br />
+                  <img src="images/live-casino-carousel-6.webp" alt="HPWIN Lightning Roulette Live Casino" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Lightning Roulette</h3>
+                      <p>Evolution Gaming</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="t-row">
+              <div class="title-wrap">
+                <h2>Popular Games We Love</h2>
+              </div>
+            </div>
+            <div id="hotgame-list" class="owl-carousel">
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/slots/"><br />
+                  <img src="images/slot1.webp" alt="HPWIN Wisdom of Anthena Slots Game" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3> Wisdom of Anthena</h3>
+                      <p>Pragmatic Play</p>
+                      <p class="bl-btn">RTP 96.73</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/slots/"><br />
+                  <img src="images/slot2.webp" alt="HPWIN Wild Wild Riches Slots Game" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Wild Wild Riches</h3>
+                      <p>Pragmatic Play</p>
+                      <p class="bl-btn">RTP 96.93</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/slots/"><br />
+                  <img src="images/slot3.webp" alt="HPWIN Rainbow Reels Slots Game" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Rainbow Reels</h3>
+                      <p>Pragmatic Play</p>
+                      <p class="bl-btn">RTP 97.01</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/slots/"><br />
+                  <img src="images/slot4.webp" alt="HPWIN Egyptian Fortunes Slots Game" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Egyptian Fortunes</h3>
+                      <p>Pragmatic Play</p>
+                      <p class="bl-btn">RTP 96.93</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/slots/"><br />
+                  <img src="images/slot5.webp" alt="HPWIN Ancient Egypt Slots Game" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Ancient Egypt</h3>
+                      <p>Pragmatic Play</p>
+                      <p class="bl-btn">RTP 96.84</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="hot-game"><a href="https://159.89.199.92/slots/"><br />
+                  <img src="images/slot6.webp" alt="HPWIN Cowboy Coins Slots Game" /></a>
+                  <div class="hg-main-wrap">
+                    <div class="hg-caption">
+                      <h3>Cowboy Coins</h3>
+                      <p>Pragmatic Play</p>
+                      <p class="bl-btn">RTP 96.87</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.text-area --> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section -->
+    <div class="section section--7" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+      <div class="container">
+        <div class="text-area" >
+          <div class="h-4-info">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="h-main-wrap">
+                  <h2 id="4-useful-online-gambling-information">4 Useful Online Gambling Information tip by HPWIN</h2>
+                  <p>Here are crucial features to consider when choosing a Malaysia Biggest And Kuda King Trusted Online Casino</p>
+                </div>
+              </div>
+            </div>
+            <div class="row p-wrap">
+              <div class="col-sm-7 p-wrap-content">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="h-ab-wrap">
+                      <h3><a href="https://www.hpwinvipnow.com" target="_blank" rel="nofollow noopener">Promotions<br />and Bonuses</a></h3>
+                      <p>The online casino promotional offers and bonuses are so numerous to state down. Money discounts, free credit no deposit, rewards, and exclusive gifts promotion are given to our players every day. We offer new players a wide range of Welcome Bonus when the least required deposit is paid. Once in a while, we initiate campaigns and competitions to zest things up by giving a liberal amount of money prizes, free spins and wager credits.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="h-ab-wrap">
+                      <h3><a href="https://www.hpwinvipnow.com" target="_blank" rel="nofollow noopener">HPWIN<br />Mobile APP</a></h3>
+                      <p>At HPWIN, we don&#8217;t just offer you the opportunity to play your favorite online gambling games using your web browser but offers you to play the games using the mobile app. This is an easy approach brought by us to the users in order for them to easily access various services offered in the platform. Be it that you are a user of an Android or iOS mobile device, this application will be compatible for any devices.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="h-ab-wrap">
+                      <h3>Security and Safety</h3>
+                      <p>Our players are safe and secured to use the online casino platform and the mobile app. We featured two-factor authenticated feature as well as 128-encrypted features that are safe from any hacking activist. We have acquired multiple online gambling licenses from international gambling corporations such as Gaming Curacao, which is an authority that provides legal casino licenses. Hence, our players may rest assured that online casino is legal and legit.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="h-ab-wrap">
+                      <h3>Payment Method</h3>
+                      <p>On our platform, you can be assured of swift and secure transactions, both for deposits and withdrawals. The transaction can be done at any given time of the day with no restriction or limitation to public holidays. The methods of deposit accepted on this trusted online gambling site are FPay, online transfers, Vaderpay with no additional charges are incurred with all transactions being completed quickly within a day.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 p-wrap-banner"><img src="images/home_lady.webp" alt="Paula HPWIN Girl Banner" /></div>
+            </div>
+          </div>
+        </div>
+        <!-- /.text-area --> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section -->
+    <div class="section section--8" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+      <div class="container">
+        <div class="text-area" >
+          <div class="row h-4-short h-home-wrap">
+            <div class="col-sm-3">
+              <p><img src="images/security.webp" alt="Security Online Gambling" width="200px" /></p>
+              <div class="h-short-caption">
+                <h3>Security</h3>
+                <p>Gaming Curacao, 128-Encrypted</p>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <p><img src="images/payment.webp" alt="Minimum Deposit" width="200px" /></p>
+              <div class="h-short-caption">
+                <h3>Minimum Deposit</h3>
+                <p>RM20 (QRPay &gt; Pay Essence)</p>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <p><img src="images/promo.webp" alt="Bonus and Promotion" width="200px" /></p>
+              <div class="h-short-caption">
+                <h3>Bonus &amp; Promotion</h3>
+                <p>Welcome Bonus, Reload Bonus, Cash Back</p>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <p><img src="images/bank.webp" alt="Banking Payment Method" width="200px" /></p>
+              <div class="h-short-caption">
+                <h3>Banking Method</h3>
+                <p>Quickpay, Bank Transfer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.text-area --> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section -->
+    <div class="section section--9" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+      <div class="container">
+        <div class="text-area" >
+          <div class="h-home-wrap">
+            <div class="h-main-wrap">
+              <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="su-accordion su-u-trim home-accordion">
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>Which online casino is the best in Asia?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>If you are looking for the best online casino, you are looking at the right spot. One of the best, if not, the biggest and most trusted casino online in Asia is HPWIN. We offer a huge variety of casino games and each of them is uniquely amazing.</p>
+                      <h3>Huge Variety of Games</h3>
+                      <p>A database of international casino game developers&#8217; games integrated into the online gambling platform such as Microgaming, Playtech, SA Gaming, Pragmatic Play, SpadeGaming, and more. Expect to see online slot games, live dealer casino games, online poker, sports betting, esports betting, fishing games, and more in HPWIN.</p>
+                      <h3>24/7 Customer Support</h3>
+                      <p>We place our customers as the highest priority. By doing this, we are providing the best customer support team at any time of the day. If you face any issue or query about your gaming experience, just hit the LiveChat button and our professional team will reply to you within minutes.</p>
+                      <h3>A Plethora of Bonuses and Promotions</h3>
+                      <p>Here at HPWIN, we offer a variety of bonuses and promotions that will keep your head spinning with excitement! Whether you&#8217;re looking to play online poker, online slots or live dealer casino games, we have something for every player. HPWINVIP offers weekly promotions that will give our players the opportunity to win some of their favourite online casino games as prizes! Join now and get in on all these bonuses and promotions today!</p>
+                    </div>
+                  </div>
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>How to win in Casino Online?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>Winning online casinos in Asia is possible for everyone. It does not matter if you have never played before or are a veteran, we provide you with an opportunity to win! There are many things that can lead to a successful online gambling experience at HPWIN and we want our players to explore each one of them until they find what works best for them.</p>
+                      <h3>#1. Pick The Game That Suits You Best</h3>
+                      <p>There is a wide variety of online casino games at HPWIN, which means that there will be one for you! Try out as many games as you can and pick those that won your feeling and focus on those games.</p>
+                      <h3>#2. Always Check For New Promotions or Bonuses</h3>
+                      <p>As a player, you would like to know the latest online casino promotions. We provide lots of promotions such as Welcome Bonus, Reload Bonus, Cash Rebates, and more to our players. This way, you can take full advantage of it and still be on the winning side.</p>
+                      <h3>#3. Gamble Responsibly</h3>
+                      <p>Online Gambling addiction has already been recognized as both a mental health problem and a social issue for those who misuse it. The consequences range from financial problems such as bankruptcy and homelessness to legal troubles. If you realise that you may become an addict, please seek professional assistance from the authorities such as https://www.gamcare.org.uk/ and https://www.begambleaware.org/.</p>
+                    </div>
+                  </div>
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>Is HPWIN Legal in Asia?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>Yes, of course! HPWIN is a legitimate online casino operating in Asia. It is 100% licensed, registered, secure, and safe. We are the most trusted and reliable online casino in the region and have a customer base of more than a million already. Below are the points that prove HPWIN is totally legal to play in Asia.</p>
+                      <h3>#1. International Licenses</h3>
+                      <p>HPWIN has obtained international gambling licenses such as Regulated &amp; Licensed by the Government of Curacao and operates under the Master License of Gaming Services Provider.</p>
+                      <h3>#2. International Audits</h3>
+                      <p>To ensure the safe and fair operation of our gaming facility, we invite several auditors from internationally recognized audit companies such as TST Global Limited, iTech Labs Limited, and SGS International Services SAU to conduct annual audits on our company structure and internal control system. This protects players from fund mismanagement or theft by a third party.</p>
+                      <h3>#3. Secured by Trusted Technology Systems</h3>
+                      <p>HPWIN online gambling platform is integrated with a number of high-security systems to ensure the safety of our members. We utilize the latest encryption technology, which is also used by leading financial institutions such as Visa and MasterCard to prevent any unauthorized access. By adding a level of security on top of these two methods, our casino has become one of the most secure online gaming platforms.</p>
+                    </div>
+                  </div>
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>What is the best and safest online casino?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>HPWIN is undoubtedly the safest and most trusted online casino in Asia, included by Kuda King. Online casino is very popular and has been around since 2015. It features a wide selection of games that can be accessed both online and on mobile devices, as well as an online sportsbook to bet on various sporting events from all over the world.</p>
+                      <h3>100% Transparency</h3>
+                      <p>There are no hidden fees or charges when depositing at HPWIN. All deposits are processed instantly and you can withdraw your winnings immediately following the online casino’s receipt of funds.</p>
+                      <h3>Guaranteed Payout Within Minutes</h3>
+                      <p>With the latest payment technology integrated into our platform, you are able to deposit and withdraw your funds into your wallet within minutes. All processes are done with the highest security to ensure your safety and security.</p>
+                      <h3>International Gambling Licenses</h3>
+                      <p>HPWIN has obtained a number of international gambling authority licenses such as PACGOR, BMM, iTechLabs, Gambling Laboratories International, and more. This ensures that every player at our platform enjoys the best and safest online casino experience.</p>
+                    </div>
+                  </div>
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>Is it safe to play in Online Casino?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>Many players wonder if mobile online casinos are safe. Note that mobile and online casinos utilize the same security measures as their desktop counterparts. Hence, they are quite safe. Nonetheless, it is recommended that players should not use public Wi-Fi while playing, as it is more prone to cybercrime.</p>
+                    </div>
+                  </div>
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>How do I register an online casino account and play?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>Registering on HPWINVIP platform is straightforward and quick. Registration. Turn to the upper right-hand corner of the screen to the menu and choose Join Now.<br />
+                        Make sure that you input all the information you requested, including your username and password. Click the confirmation that you are 18 years old or above, and your account will be made immediately.</p>
+                    </div>
+                  </div>
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>What is a Welcome Bonus and How can I claim it?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>A Welcome Bonus provides exclusive offers from online casinos to get you to play the places that we offer. You will find many games on our platform that has all a deal connected to them. You must open an account to receive it. You will now take advantage of those rewards after registration is completed.</p>
+                    </div>
+                  </div>
+                  <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>How can I deposit or withdraw from the HPWIN Gaming Wallet?</div>
+                    <div class="su-spoiler-content su-u-clearfix su-u-trim">
+                      <p>Follow the following steps to deposit on your gaming wallet:<br />
+                        Depositing:</p>
+                      <ul>
+                        <li>Log in to your account.</li>
+                        <li>Select the banking option you like and click the Deposit tab.</li>
+                        <li>Choose the payment method you wish to use.</li>
+                        <li>Follow the prompts. If you choose credit/debit cards, you need to input personal details.</li>
+                        <li>Enter the money you like to put into your account.</li>
+                        <li>Ensure all details are correct.</li>
+                        <li>Click confirm.</li>
+                        <li>Your funds will immediately appear.</li>
+                      </ul>
+                      <p>Withdrawing:</p>
+                      <ul>
+                        <li>Log in to your account and select the Banking tab.</li>
+                        <li>Pick the Withdrawal option.</li>
+                        <li>Follow the prompts and enter the amount of money you want to process.</li>
+                        <li>Ensure all details are correct, then click confirm.</li>
+                        <li>Remember that pending times vary on the system you are using. However, rest assured your funds will be accessible within five working days.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.text-area --> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section --> 
+  </main>
+  <!-- #main -->
+  
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="widget-columns clearfix widget-count-1">
+          <div id="text-3" class="widget widget_text">
+            <div class="textwidget">
+              <div class="footbtmwrapper2">
+                <div class="row">
+                  <div class="col-12 col-lg-3">
+                    <div class="wrap-gl">
+                      <h3>Gaming License <img loading="lazy" class="cus-img" src="svg/tick.svg" alt="Gaming License" width="30" height="23" /></h3>
+                      <p><img loading="lazy" src="svg/gaming_curacao.svg" alt="Gaming Curacao" width="124" height="45" /></p>
+                      <p>HPWIN is a Regulated &amp; Licensed by the Government of Curacao and operates under the Master License of Gaming Services Provider, N.V. #365/JAZ . HPWINVIP trusted company by Kudaking.</p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-2">
+                    <div class="wrap-f-menu">
+                      <h3>Games</h3>
+                      <p><a href="/sports/">Sports</a><a href="https://159.89.199.92/live-casino/">Live Casino</a> <a href="https://159.89.199.92/slots/">Slots</a> <a href="https://159.89.199.92/fishing/">Fishing</a> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">Lottery</a></p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-2">
+                    <div class="wrap-f-menu">
+                      <h3>Information</h3>
+                      <p><a href=" https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">About Us</a> <a href=" https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">VIP</a> <a href=" https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">Leaderboard</a> <a href=" https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">Contact Us</a> <a href=" https://www.hpwinvipnow.com
+">Responsible Gaming</a> <a href=" https://www.hpwinvipnow.com
+">Affiliates</a> <a href=" https://www.hpwinvipnow.com
+">Info Centre</a> <a href=" https://www.hpwinvipnow.com">Term &amp; Conditions</a></p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-2">
+                    <div class="wrap-f-menu-mobile">
+                      <div class="su-accordion su-u-trim footer-accordion">
+                        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron footer-spoiler su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                          <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>Games</div>
+                          <div class="su-spoiler-content su-u-clearfix su-u-trim"> <a href="https://159.89.199.92/sports/">Sports</a> <a href="https://159.89.199.92/live-casino/">Live Casino</a> <a href="https://159.89.199.92/slots/">Slots</a> <a href="https://159.89.199.92/fishing/">Fishing</a><a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">Lottery</a><br />
+                          </div>
+                        </div>
+                        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron footer-spoiler su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                          <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>About Us</div>
+                          <div class="su-spoiler-content su-u-clearfix su-u-trim"> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">About Us</a> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">Contact Us</a> </div>
+                        </div>
+                        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron footer-spoiler su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                          <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>Info</div>
+                          <div class="su-spoiler-content su-u-clearfix su-u-trim"> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">VIP</a> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">Leaderboard</a> <a href=" https://www.hpwinvipnow.com">Responsible Gaming</a> <a href=" https://www.hpwinvipnow.com">Affiliates</a> <a href=" https://www.hpwinvipnow.com">Info Centre</a> <a href=" https://www.hpwinvipnow.com">Term &amp; Conditions</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-3">
+                    <div class="wrap-a">
+                      <h3>Certification</h3>
+                      <p><img loading="lazy" src="svg/bmm-logo.svg" alt="BMM" width="63" height="23" /> <img loading="lazy" src="svg/itechlab.svg" alt="iTech Labs" width="36" height="34" /><img loading="lazy" src="svg/GLI.svg" alt="GLI" width="39" height="39" /> <img loading="lazy" src="svg/TST.svg" alt="TST" width="39" height="39" /> <img loading="lazy" src="svg/godaddy.svg" alt="Godaddy" width="130" height="27" /></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footbtmwrapper3">
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-lg-5">
+                    <div class="wrap-a">
+                      <h3>Payment Method</h3>
+                      <p><img loading="lazy" src="svg/TouchNGo.svg" alt="Touch N Go" width="35" height="35" /> <img loading="lazy" src="svg/boost.svg" alt="Boost" width="35" height="35" /> <img loading="lazy" src="svg/grab_pay.svg" alt="GrabPay" width="35" height="35" /> <img loading="lazy" src="svg/duit_now.svg" alt="Duitnow" width="35" height="35" /> <img src="svg/visa.svg" alt="EaziePay" height="22" /><br />
+                        <img src="svg/master_card.svg" alt="help2pay" height="30" /> <img loading="lazy" src="svg/FPX.svg" alt="FPX" width="55" height="15" /></p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-lg-2">
+                    <div class="wrap-a">
+                      <h3>Follow Us</h3>
+                      <p><a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="svg/facebook.svg" alt="HPWIN Facebook" width="31" height="31" /></a> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="svg/instagram.svg" alt="HPWIN Instagram" width="32" height="32" /></a> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="svg/youtube.svg" alt="HPWIN Youtube Channel" width="34" height="34" /></a> <a href=" https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="svg/twitter.svg" alt="HPWIN Twitter" width="34" height="34" /></a></p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-lg-2">
+                    <div class="wrap-a">
+                      <h3>Security</h3>
+                      <p><img src="svg/iovation-logo.svg" alt="iovation" height="35" /> <img src="svg/threatmetrix.svg" alt="Threat Metrix" height="35" /></p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-lg-3">
+                    <div class="wrap-a">
+                      <h3>Responsible Gaming</h3>
+                      <p><img src="svg/18+.svg" alt="18+" /><img src="svg/gamcare.svg" alt="GamCare" /><img src="svg/begambleaware.svg" alt="BGA" /></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--.widget-columns--> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.footer-top -->
+    
+    <div class="footer-copyright">
+      <div class="container">
+        <p>© 2023 HPWIN. All rights reserved. 18+</p>
+        <a href="#" class="btn btn-backToTop"><i class="icon-poka icon-poka-arrow-up"></i></a> </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.footer-copyright --> 
+    
+  </footer>
+</div>
+<!-- /#page-wrapper --> 
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/1c02dc81-3bc5-4b95-9410-99ff048d22ff.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script>
+<link data-minify="1" rel='stylesheet' id='metaslider-flex-slider-css'  href='css/flexslider.css' type='text/css' media='all' property='stylesheet' />
+<link data-minify="1" rel='stylesheet' id='metaslider-public-css'  href='css/public.css' type='text/css' media='all' property='stylesheet' />
+<link data-minify="1" rel='stylesheet' id='su-icons-css'  href='css/icons.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='su-shortcodes-css'  href='css/shortcodes.css' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script> 
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script> 
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='js/scripts.all.min.js?ver=3.2.1' id='poka-scripts-all-js'></script> 
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='js/owl.carousel.min.js?ver=3.2.1' id='owl-carousel-min-js'></script> 
+<script type='text/javascript' id='q2w3_fixed_widget-js-extra'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"primary-widget-area","use_sticky_position":false,"margin_top":10,"margin_bottom":0,"stop_elements_selectors":".footer","screen_max_width":0,"screen_max_height":0,"widgets":["#media_image-2"]}];
+/* ]]> */
+</script> 
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='js/frontend.min.js?ver=6.2.3' id='q2w3_fixed_widget-js'></script> 
+<script type='text/javascript' src='js/ml-slider/assets/sliders/flexslider/jquery.flexslider.min%EF%B9%96ver=3.35.0.js' id='metaslider-flex-slider-js'></script> 
+<script type='text/javascript' id='metaslider-flex-slider-js-after'>
+var metaslider_2035 = function($) {$('#metaslider_2035').addClass('flexslider');
+            $('#metaslider_2035').flexslider({ 
+                slideshowSpeed:3000,
+                animation:"slide",
+                controlNav:true,
+                directionNav:false,
+                pauseOnHover:true,
+                direction:"horizontal",
+                reverse:false,
+                keyboard:false,
+                animationSpeed:600,
+                prevText:"Previous",
+                nextText:"Next",
+                fadeFirstSlide:false,
+                easing:"linear",
+                slideshow:true
+            });
+            $(document).trigger('metaslider/initialized', '#metaslider_2035');
+        };
+        var timer_metaslider_2035 = function() {
+            var slider = !window.jQuery ? window.setTimeout(timer_metaslider_2035, 100) : !jQuery.isReady ? window.setTimeout(timer_metaslider_2035, 1) : metaslider_2035(window.jQuery);
+        };
+        timer_metaslider_2035();
+</script> 
+<script type='text/javascript' id='su-shortcodes-js-extra'>
+/* <![CDATA[ */
+var SUShortcodesL10n = {"noPreview":"This shortcode doesn't work in live preview. Please insert it into editor and preview on the site.","magnificPopup":{"close":"Close (Esc)","loading":"Loading...","prev":"Previous (Left arrow key)","next":"Next (Right arrow key)","counter":"%curr% of %total%","error":"Failed to load content. <a href=\"%url%\" target=\"_blank\"><u>Open link<\/u><\/a>"}};
+/* ]]> */
+</script> 
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='js/index.js?ver=1694691019' id='su-shortcodes-js'></script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1694722628 -->
