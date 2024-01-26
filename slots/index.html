@@ -1,0 +1,543 @@
+<!doctype html>
+<html class="no-js" lang="en-MY">
+    <head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+        
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta http-equiv="Content-Language" content="en">
+        <title>No.1 Online Slots Games Malaysia | HPWIN Slot Machine</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="HPWIN - No1 Online Slots Games in Malaysia. Our online slot games are, including Spadegaming, Playtech, 918kiss/918Kiss and MEGA888." />
+	<link rel="canonical" href="https://159.89.199.92/slots/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="No.1 Online Slots Games Malaysia | HPWIN Slot Machine" />
+	<meta property="og:description" content="HPWIN - No1 Online Slots Games in Malaysia. Our online slot games are, including Spadegaming, Playtech, 918kiss/918Kiss and MEGA888." />
+	
+	<meta property="og:site_name" content="HPWIN | Trusted Online Casino" />
+	<meta property="article:modified_time" content="2023-12-05T03:14:02+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+<link href="https://159.89.199.92/images/favicon.webp" rel="shortcut icon" id="favicon" />
+
+
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<style id='wpml-legacy-dropdown-0-inline-css' type='text/css'>.wpml-ls-statics-shortcode_actions{background-color:#ffffff;}.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#ffffff;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+</style>
+<link rel='stylesheet' id='poka-vendor-styles-css'  href='../css/styles-vendor.min%EF%B9%96ver=3.2.1.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='poka-main-styles-css'  href='../css/style.css' type='text/css' media='all' />
+
+
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery.min%EF%B9%96ver=3.6.0.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min%EF%B9%96ver=3.3.2.js' id='jquery-migrate-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='../js/init.js?ver=1694691019' id='init-js'></script>
+<style id="wpp-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-placeholder,.wpp-widget-block-placeholder,.wpp-shortcode-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+
+
+    </head>
+    <body class="page-template-default page page-id-2637 page-parent body-header-style1 body-show-breadcrumbs body-fullscreen-sections">
+
+        
+        <div id="page-wrapper">
+
+        
+<header>
+    <div class="main-head">
+       <div class="col-menu-mobile"> <a href="#mobile-menu" class="trigger-mmenu hidden-lg-up"> <img alt="Sidemenu icon" src="../images/sidemenu.webp"/> </a> </div>
+      <div class="col-menu-right">
+        <ul class="p-list">
+          <li class="d-none d-sm-none d-lg-inline"><a class="login-btn registernow" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Login</a></li>
+          <li class="d-none d-sm-none d-lg-inline"><a class="joinnow-btn" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Join Now</a></li>
+          <li> </li>
+        </ul>
+      </div>
+      <div class="align-self-center col-logo-mobile"> <a href="https://159.89.199.92/" id="logo"> <img src="../svg/hpwin-logo.svg" alt="HPWIN" width="150" height="50"> </a>
+        <div class="head-menu head-menu--s1 clearfix">
+          <ul id="menu-main-menu" class="menu hidden-md-down">
+            <li id="menu-item-2856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2856"><a href="https://159.89.199.92/sports/">Sports</a></li>
+            <li id="menu-item-2477" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477"><a href="https://159.89.199.92/live-casino/">Casino</a></li>
+            <li id="menu-item-2658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2658"><a href="https://159.89.199.92/slots/">Slots</a></li>
+            <li id="menu-item-2573" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2573"><a href="https://159.89.199.92/fishing/">Fishing</a></li>
+            <li id="menu-item-21310" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-21307 current_page_item menu-item-21310"><a href="https://159.89.199.92/lottery/" aria-current="page">Lottery</a></li>
+            <li id="menu-item-2144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2144"><a target="_blank" rel="sponsored noopener" href="https://www.hpwinvipnow.com
+">Promos</a></li>
+            <li id="menu-item-2137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2137"><a target="_blank" rel="sponsored noopener" href="https://www.hpwin.net/live-cuci/">LIVE CUCI</a> </li>
+          </ul>
+          <nav id="mobile-menu">
+            <ul id="menu-main-menu-1" class="mobmenu">
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2856"><a href="https://159.89.199.92/sports/">Sports</a></li>
+ 
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477"><a href="https://159.89.199.92/live-casino/">Casino</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2658"><a href="https://159.89.199.92/slots/">Slots</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2573"><a href="https://159.89.199.92/fishing/">Fishing</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-21307 current_page_item menu-item-21310"><a href="https://159.89.199.92/lottery/" aria-current="page">Lottery</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2144"><a target="_blank" rel="sponsored noopener" href="https://www.hpwinvipnow.com
+">Promos</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2137"><a target="_blank" rel="sponsored noopener" href="https://www.hpwin.net/live-cuci/">LIVE CUCI</a> </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- /#menu -->
+    
+    <div class='bwrap'><a href='https://www.hpwinvipnow.com'><img src='../images/slot_banner.webp' alt='Slot Games Malaysia' ></a></div>
+    <div class="btn-menu-mobile">
+      <div class="row"> <a class="col-6 col-sm-6 joinnow-btn-mobile" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Join Now</a> <a class="col-6 col-sm-6 login-btn-mobile" href="https://www.hpwinvipnow.com" rel="nofollow" target="_blank">Login</a> </div>
+    </div>
+  </header>
+
+                        <div class="fullwidth text-area breadcrumbs-wrapper">
+            <div class="container">
+                <div id="breadcrumbs" class="breadcrumb-trail breadcrumbs"><span class="item-home"><a class="bread-link bread-home" href="https://159.89.199.92/" title="Home">Home</a></span><span class="separator"> <span class="breadcrumb-sep"></span> </span><span class="item-current item-2637"><span title="Slots"> Slots</span></span></div>            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.fullwidth -->
+        
+        
+                            <div class="section section--1 section--first" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+                    <div class="container">
+                        <div class="text-area" style="background-color:">
+                                                        <div id="inner-topgames-list" class="owl-carousel">
+    <div class="item">
+        <div class="top-game">
+            <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+                <img src="../images/slotthumb1.webp" alt="HPWIN Monkey Warriors Slots Game" />
+            </a>
+            <div class="hg-main-wrap">
+                <div class="hg-caption">
+                    <div class="hg-caption-title">
+                        <h3>Monkey Warriors</h3>
+                        <img loading="lazy" class="info-icon" src="../images/info.webp" alt="Info" width="25" height="25" />
+                    </div>
+                    <p>Pragmatic Play</p>
+                    <p class="bl-btn">RTP 97.05</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="top-game">
+            <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+                 <img src="../images/slotthumb2.webp" alt="HPWIN Bigger Bass Bonanza" />
+            </a>
+            <div class="hg-main-wrap">
+                <div class="hg-caption">
+                    <div class="hg-caption-title">
+                        <h3>Bigger Bass Bonanza</h3>
+                        <img loading="lazy" class="info-icon" src="../images/info.webp" alt="Info" width="25" height="25" />
+                    </div>
+                    <p>Pragmatic Play</p>
+                    <p class="bl-btn">RTP 96.75</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="top-game">
+            <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+                 <img src="../images/slotthumb3.webp" alt="HPWIN Panda Fortune 2 Slots Game" />
+            </a>
+            <div class="hg-main-wrap">
+                <div class="hg-caption">
+                    <div class="hg-caption-title">
+                        <h3>Panda Fortune 2</h3>
+                        <img loading="lazy" class="info-icon" src="../images/info.webp" alt="Info" width="25" height="25" />
+                    </div>
+                   <p>Pragmatic Play</p>
+                    <p class="bl-btn">RTP 96.73</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="top-game">
+            <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+                 <img src="../images/slotthumb4.webp" alt="HPWIN Ancient Eygpt Slots Game" />
+            </a>
+            <div class="hg-main-wrap">
+                <div class="hg-caption">
+                    <div class="hg-caption-title">
+                        <h3>Ancient Eygpt</h3>
+                        <img loading="lazy" class="info-icon" src="../images/info.webp" alt="Info" width="25" height="25" />
+                    </div>
+                    <p>Pragmatic Play</p>
+                    <p class="bl-btn">RTP 96.73</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="top-game">
+            <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+                  <img src="../images/slotthumb5.webp" alt="HPWIN 3 Kingdom Slots Game" />
+            </a>
+            <div class="hg-main-wrap">
+                <div class="hg-caption">
+                    <div class="hg-caption-title">
+                        <h3>3 Kingdom</h3>
+                        <img loading="lazy" class="info-icon" src="../images/info.webp" alt="Info" width="25" height="25" />
+                    </div>
+                   <p>Pragmatic Play</p>
+                    <p class="bl-btn">RTP 96.95</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                        </div>
+                        <!-- /.text-area -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /.section -->
+                            <div class="section section--2" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+                    <div class="container">
+                        <div class="text-area" >
+                                                        <div class="nav-provider-wrap">
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-hot">Hot</p>
+            <img loading="lazy" src="../images/918_slot.webp" alt="918Kiss Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-hot">Hot</p>
+             <img loading="lazy" src="../images/relax_slot.webp" alt="Relax Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-hot">Hot</p>
+             <img loading="lazy" src="../images/haba_slot.webp" alt="Habanero Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-new">New</p>
+            <img loading="lazy" src="../images/ag_slot.webp" alt="AG Gaming Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+             <img loading="lazy" src="../images/bbin_slot.webp" alt="BBIN Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-hot">Hot</p>
+            <img loading="lazy" src="../images/betsoft_slot.webp" alt="Betsoft Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-hot">Hot</p>
+            <img loading="lazy" src="../images/cq9_slot.webp" alt="CQ9 Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-new">New</p>
+            <img loading="lazy" src="../images/gp_slot.webp" alt="Gameplay Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <img loading="lazy" src="../images/mg_slot.webp" alt="Microgaming Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <img loading="lazy" src="../images/pra_slot.webp" alt="Pragmatic Play Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <img loading="lazy" src="../images/pt_slot.webp" alt="Playtech Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+           <img loading="lazy" src="../images/rt_slot.webp" alt="Redtiger Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <img loading="lazy" src="../images/rtg_slot.webp" alt="RTG Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <img loading="lazy" src="../images/sa_slot.webp" alt="Sa Gaming Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <img loading="lazy" src="../images/sg_slot.webp" alt="Spadegaming Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+
+ 
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+           <img loading="lazy" src="../images/png_slot.webp" alt="Playngo Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+            <p class="nav-provider-new">New</p>
+           <img loading="lazy" src="../images/qs_slot.webp" alt="Quickspin Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+    <div class="provider-single">
+        <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener">
+           <img loading="lazy" src="../images/sbo_slot.webp" alt="SBObet Slot Game"
+                width="240" height="300" />
+        </a>
+    </div>
+
+    
+   
+</div>                        </div>
+                        <!-- /.text-area -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /.section -->
+                            <div class="section section--3" style="background-position:center top; background-size:auto; background-repeat:no-repeat; ">
+                    <div class="container">
+                        <div class="text-area" >
+                                                        <div class="row">
+<div class="col-lg-12">
+<div class="seo-content">
+<h1>Slot Game Online | Mobile Slot Game 918kiss Free Credit</h1>
+<p>HPWin provides the most exclusive online slot games. These engaging online slot machines are up-to-date with the latest trends in the market. HPWin offers high payouts and quick and easy cashing out procedures. Players can enjoy a huge selection of slot games through our sophisticated and high-tech software which abides by the predetermined gaming standards.</p>
+</div>
+<div class="seo-content">
+<h2>Game Slot 918kiss</h2>
+<p>Whether you are playing at a real casino or playing online, there is one form of casino game that stands head and shoulders above all others in terms of popularity: namely, slot machines. There are many reasons why online slot machines are ahead of other casino games: they are so simple to play and don't need any strategic knowledge. They are also highly entertaining when played online because of the excellent graphics and gameplay formats that are now available. Here we offer an in-depth guide to playing online slot machines. It could hardly be any easier to play online slot machines: indeed they are even easier to play on the internet than they are in a traditional casino. All you need to do is select the game format that interests you and chooses an amount that you're willing to put at risk with a spin. Then simply click the spin button and watch as the reels spin. Should they land in a formation that offers a pay-out then you can usually pick up the money straight away. It really is, just that simple. With HPWIN, be spoilt with our huge array of exclusive online slot games. All our online slot games like scr888 are made available for both desktop and mobile so our customers can play anywhere they please. HPWin is the best live online casino platform. Get free credit bonus to play when you join us today!</p>
+</div>
+</div>
+                      </div>
+                        <!-- /.text-area -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /.section -->
+                
+                
+        
+            <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="widget-columns clearfix widget-count-1">
+          <div id="text-3" class="widget widget_text">
+            <div class="textwidget">
+              <div class="footbtmwrapper2">
+                <div class="row">
+                  <div class="col-12 col-lg-3">
+                    <div class="wrap-gl">
+                      <h3>Gaming License <img loading="lazy" class="cus-img" src="../svg/tick.svg" alt="Gaming License" width="30" height="23" /></h3>
+                      <p><img loading="lazy" src="../svg/gaming_curacao.svg" alt="Gaming Curacao" width="124" height="45" /></p>
+                      <p>HPWIN is a Regulated &amp; Licensed by the Government of Curacao and operates under the Master License of Gaming Services Provider, N.V. #365/JAZ</p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-2">
+                    <div class="wrap-f-menu">
+                      <h3>Games</h3>
+                      <p><a href="https://159.89.199.92/sports/">Sports</a><a href="https://159.89.199.92/live-casino/">Live Casino</a> <a href="https://www.hpwinvipnow.com">Slots</a>  <a href="https://159.89.199.92/fishing/">Fishing</a> <a href="https://159.89.199.92/lottery/" target="_blank" rel="sponsored noopener">Lottery</a></p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-2">
+                    <div class="wrap-f-menu">
+                      <h3>Information</h3>
+                      <p><a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">About Us</a> <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">VIP</a> <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">Leaderboard</a> <a href="https://www.hpwinvipnow.com
+" target="_blank" rel="sponsored noopener nofollow">Contact Us</a> <a href="https://www.hpwinvipnow.com
+">Responsible Gaming</a> <a href="https://www.hpwinvipnow.com
+">Affiliates</a> <a href="https://www.hpwinvipnow.com
+">Info Centre</a> <a href="https://www.hpwinvipnow.com">Term &amp; Conditions</a></p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-2">
+                    <div class="wrap-f-menu-mobile">
+                      <div class="su-accordion su-u-trim footer-accordion">
+                        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron footer-spoiler su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                          <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>Games</div>
+                          <div class="su-spoiler-content su-u-clearfix su-u-trim"> <a href="https://159.89.199.92/sports/">Sports</a> <a href="https://159.89.199.92/live-casino/">Live Casino</a> <a href="https://www.hpwinvipnow.com">Slots</a> <a href="https://159.89.199.92/fishing/">Fishing</a><a href="https://159.89.199.92/fishing/" target="_blank" rel="sponsored noopener">Lottery</a><br />
+                          </div>
+                        </div>
+                        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron footer-spoiler su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                          <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>About Us</div>
+                          <div class="su-spoiler-content su-u-clearfix su-u-trim"> <a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">About Us</a> <a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">Contact Us</a> </div>
+                        </div>
+                        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-chevron footer-spoiler su-spoiler-closed" data-scroll-offset="0" data-anchor-in-url="no">
+                          <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon"></span>Info</div>
+                          <div class="su-spoiler-content su-u-clearfix su-u-trim"> <a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">VIP</a> <a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener nofollow">Leaderboard</a> <a href="https://www.hpwinvipnow.com">Responsible Gaming</a> <a href="https://www.hpwinvipnow.com">Affiliates</a> <a href="https://www.hpwinvipnow.com">Info Centre</a> <a href="https://www.hpwinvipnow.com">Term &amp; Conditions</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-lg-3">
+                    <div class="wrap-a">
+                      <h3>Certification</h3>
+                      <p><img loading="lazy" src="../svg/bmm-logo.svg" alt="BMM" width="63" height="23" /> <img loading="lazy" src="../svg/itechlab.svg" alt="iTech Labs" width="36" height="34" /><img loading="lazy" src="../svg/GLI.svg" alt="GLI" width="39" height="39" /> <img loading="lazy" src="../svg/TST.svg" alt="TST" width="39" height="39" /> <img loading="lazy" src="../svg/godaddy.svg" alt="Godaddy" width="130" height="27" /></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footbtmwrapper3">
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-lg-5">
+                    <div class="wrap-a">
+                      <h3>Payment Method</h3>
+                      <p> <img loading="lazy" src="../svg/TouchNGo.svg" alt="Touch N Go" width="35" height="35" /> <img loading="lazy" src="../svg/boost.svg" alt="Boost" width="35" height="35" /> <img loading="lazy" src="../svg/grab_pay.svg" alt="GrabPay" width="35" height="35" /> <img loading="lazy" src="../svg/duit_now.svg" alt="Duitnow" width="35" height="35" /> <img src="../svg/visa.svg" alt="EaziePay" height="22" /><br />
+                        <img src="../svg/master_card.svg" alt="help2pay" height="30" /> <img loading="lazy" src="../svg/FPX.svg" alt="FPX" width="55" height="15" /></p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-lg-2">
+                    <div class="wrap-a">
+                      <h3>Follow Us</h3>
+                      <p><a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="../svg/facebook.svg" alt="HPWIN Facebook" width="31" height="31" /></a> <a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="../svg/instagram.svg" alt="HPWIN Instagram" width="32" height="32" /></a> <a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="../svg/youtube.svg" alt="HPWIN Youtube Channel" width="34" height="34" /></a> <a href="https://www.hpwinvipnow.com" target="_blank" rel="sponsored noopener"><img loading="lazy" src="../svg/twitter.svg" alt="HPWIN Twitter" width="34" height="34" /></a></p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-lg-2">
+                    <div class="wrap-a">
+                      <h3>Security</h3>
+                      <p><img src="../svg/iovation-logo.svg" alt="iovation" height="35" /> <img src="../svg/threatmetrix.svg" alt="Threat Metrix" height="35" /></p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-lg-3">
+                    <div class="wrap-a">
+                      <h3>Responsible Gaming</h3>
+                      <p><img src="../svg/18+.svg" alt="18+" /><img src="../svg/gamcare.svg" alt="GamCare" /><img src="../svg/begambleaware.svg" alt="BGA" /></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--.widget-columns--> 
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.footer-top -->
+    
+    <div class="footer-copyright">
+      <div class="container">
+        <p>© 2023 HPWIN. All rights reserved. 18+</p>
+        <a href="#" class="btn btn-backToTop"><i class="icon-poka icon-poka-arrow-up"></i></a> </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.footer-copyright --> 
+    
+  </footer>
+        </div>
+        <!-- /#page-wrapper -->
+
+                <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script type="rocketlazyloadscript">
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+            <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/1c02dc81-3bc5-4b95-9410-99ff048d22ff.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='../js/scripts.all.min.js?ver=3.2.1' id='poka-scripts-all-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='../js/owl.carousel.min.js?ver=3.2.1' id='owl-carousel-min-js'></script>
+<script type='text/javascript' id='q2w3_fixed_widget-js-extra'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"primary-widget-area","use_sticky_position":false,"margin_top":10,"margin_bottom":0,"stop_elements_selectors":".footer","screen_max_width":0,"screen_max_height":0,"widgets":["#media_image-2"]}];
+/* ]]> */
+</script>
+
+<script type='text/javascript' id='su-shortcodes-js-extra'>
+/* <![CDATA[ */
+var SUShortcodesL10n = {"noPreview":"This shortcode doesn't work in live preview. Please insert it into editor and preview on the site.","magnificPopup":{"close":"Close (Esc)","loading":"Loading...","prev":"Previous (Left arrow key)","next":"Next (Right arrow key)","counter":"%curr% of %total%","error":"Failed to load content. <a href=\"%url%\" target=\"_blank\"><u>Open link<\/u><\/a>"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='../js/index.js?ver=1694691019' id='su-shortcodes-js'></script>
+    </body>
+</html>
+

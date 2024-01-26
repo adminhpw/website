@@ -1,0 +1,240 @@
+[30-Oct-2023 06:16:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function 4 ≥–.94ek6—ùfi/»764o92n8CiÇgiRr4ac?e62n-lef6-4‘ee-jÀf0"8766Ùa92≥8<<ârEgy˝r4q() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[30-Oct-2023 06:18:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function 48eo-aff6ÒËÁ694`62c0=6Y:úc2eÜ8a-ei¿-44e?-ë”Ÿ:-8:=˜4k;2√6;ò\4ac9j62a-2nf0"44´dÕa√˚Ü-87Ë6îê9:nˆ36Y6l<e6<°8en6-ƒ9≈i-lcf2$»7Ê64f;2l&36YÓac>•6<aË2•f0D‰ed-ën¶¶∆3766¥a9†c=8÷Y‰icoe82a-2of0,t:od-ac>-8866D‹92`6 FÈ4ace6¬a'Bef0-44no"ace÷-(∑ÜÜ4;Ω`0?6^Ñ@\e–2i–Æev0-2<Àb*¡f2-∫66a;2a–96c~Ωs¬96ia-Beh`+4˙¶dêacfg…xóq:ºa9<i676Yå—c“n62±ù2Âú-Ù4edña≥ñ:-˙76F4a92c>36Y4Q”2n?8±-=ef0,74edùadf÷() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[30-Oct-2023 06:19:21 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:19:29 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:19:31 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:19:42 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:19:47 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:19:53 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:21:08 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:21:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ;36ΩíuNYÉa4na=e6“a=2efÄ-4De¥-alfÜ.8W6ˆ>Ò92ì6ù6zR•AY≥4agbef8d-˛iÜ0-‘4ii˝aùf"83ù∆>iâÇgv3:zuARÛf4ecÕe62‰-2 f0Ô64Öd-lc÷+¯7∆64a62f736z≤’·YQj3db2y∂€a&2ef‚24µd-lπf6/876ÊÙa2cõ3;zuAT]›4acÇU;2j-•g0}4:ïd-ni6-87660ÅÉèc636yuAôÉù2`ce61a-?ïf0Ñ4îeƒ}°√f5*37665a99ì∆3:zr{AáSm4°√;î?≤l›2e¶0-44Öoacf6ç8;Ê5‘kŸ1C636zØeAYSç<ací≈6Ç!-0eÜ6?>ed-°c66-:◊Ü÷4a9Qc÷3ˆöruIπ„m4±c2e5a-rnf¿-44bd*1c˛ˆ-8∆;4a ¬ƒ63ñz|uAõ]Ùo£2e6<q,2k¶;›9?ld-$cf6-80¸64d˘2c∆3KJxv°YSf‘jcàeñ2-2ef-(4e;facf=-86;4o92cÜ86zxA„SŸt›ì2æ92ç2’e0-$‘e‘-aπjˆùË6664A99m3zíuAôSc4ac2eÊ?aÌ?e÷=() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[30-Oct-2023 06:22:05 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:27:14 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:27:31 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:27:34 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:27:38 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:27:44 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:27:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:27:56 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[30-Oct-2023 06:28:00 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:01:20 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:02:36 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:02:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ñ>]87654l©Îo636tﬁB}"Lõ$ac4e68¡-Búj0Ω04oV acËˆ »◊7ñﬁ±ï2c636+EHzzlKíac2e62a"2ïfÄ-97\=-]£Ü6-836641ô2m637tDGxxL4aSN≈5Úwef0-4§≈d-köñ?]?7(54g99n6≥÷tﬁ≤qxLH9ac2k8/A˝2ee0-À4e‘-—o˙á-8◊664a9¬|23ˆtN‚z8LKac3e>iMNÊ0-44lg-°”F:&?7264a>2m63vuDJzxLKƒan2e3<i!+µf†˝;md]() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[11-Nov-2023 09:02:39 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:04:01 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:04:09 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:04:19 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:04:28 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:04:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ?Uò0ù>‰’ƒ-ach8-¯1?:s192c÷3:ƒrÑac‚iô2a-2a;-48;d-a≥f¶Õ82¶6ub?2»π9∂4raÛ2o62k-re&0È44eT-fcfã-‚Ê6=4n)¬d¬Ÿ<Dì() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[11-Nov-2023 09:05:48 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:07:02 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:07:06 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:08:21 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:08:24 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[11-Nov-2023 09:08:31 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[18-Nov-2023 12:41:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function a:-®7704—9¬c6;cQ4aS2•^=a() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[23-Nov-2023 10:21:11 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[23-Nov-2023 10:24:49 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[23-Nov-2023 10:26:08 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[23-Nov-2023 10:28:36 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[23-Nov-2023 10:31:01 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[23-Nov-2023 10:32:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function 2ï∂Çq/2e∂õ-44µd-acf5-¸76@ja…2c6ì5d Vlï4çh2o62aùNf:-4’‰-acd;X8ó9>Íf62”ñ3vS_kzƒ¡É¬e4Ca() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[23-Nov-2023 10:32:19 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[28-Dec-2023 15:15:41 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[02-Jan-2024 07:19:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ˜d9íc6√V˘Ébxt~4¡.2√0<°-Mcm0-4ƒï‘-jIj?-ÿ˜6∆4e9¬c6Õ6hn¢|‘x<ac"ef2j69up0M4¥ge˝ac¡6çß:Ñ˝4a92c3vodbÙx4Å≥2e82±-8e›Ì÷44-knf9ΩËß;6>aÈÌc636ønjS&x‰afr:8a-85hf-‰4Öb&a£∂6ù35Ü64¡?è() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[09-Jan-2024 06:04:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function fcf6'8«6:T?2c?3<±M˘8a,‡&2Ç-eˆê'4eh"ëhf&-h7;ñ4k>)c63=¡Oqi4mc2e2<a-íalp-Ñ˚cd-aÌo6Ä»f=14å72c?&ñëOc8acj62n-›eÜ∞-åƒjdako6-8OΩ8îa92c÷3ÊqO{b4ao3e6¯f-1ef*ú?e‘-acf¡-»7664l)2wf35{Oác4ac2e6>a-¢ï|0-44eo-acf:-8796÷o9hñ3ˆzÅqm0a£>e;7m&Úe∂Ò-44id)ac`6() in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php:80
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php(98): zz9(Array, Array)
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/gorjdxzd.php on line 80
+[09-Jan-2024 06:06:35 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[09-Jan-2024 06:06:47 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
+[20-Jan-2024 01:45:54 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php:1
+Stack trace:
+#0 /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php(1): mhnPZ('/home/y765zof1u...')
+#1 {main}
+  thrown in /home/y765zof1uiuf/public_html/hpwinvipmy.com/lottery/fzrekqup.php on line 1
